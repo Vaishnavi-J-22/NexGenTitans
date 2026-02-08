@@ -1,2 +1,0 @@
-# NexGenTitans
-celestial Buildathon
