@@ -1,0 +1,18 @@
+<h2>📝 Skill Self Assessment</h2>
+<h3>Job Role: {{ role }}</h3>
+
+<form action="/final-report" method="post">
+  <input type="hidden" name="role" value="{{ role }}">
+
+  {% for skill in skills %}
+    <div>
+      <input type="checkbox" name="known_skills" value="{{ skill }}">
+      {{ skill }}
+    </div>
+  {% endfor %}
+
+  <br>
+  <button class="btn btn-success">
+    Generate Final Report
+  </button>
+</form>

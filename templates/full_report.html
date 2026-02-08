@@ -1,0 +1,36 @@
+<h2>📊 Complete Skill Readiness Report</h2>
+
+<h3>Job Role: {{ role }}</h3>
+
+<hr>
+
+<!-- Resume based analysis -->
+<h4>📄 Resume Analysis</h4>
+<p>Resume Skill Match: {{ resume_score }}%</p>
+
+<div style="width:300px;background:#eee;">
+  <div style="width:{{ resume_score }}%;background:green;color:white;">
+    {{ resume_score }}%
+  </div>
+</div>
+
+<hr>
+
+<!-- Specification skills -->
+<h4>🧠 Skill Self Assessment</h4>
+<p>Select the skills you know:</p>
+
+<form action="/final-evaluation" method="post">
+  <input type="hidden" name="role" value="{{ role }}">
+  <input type="hidden" name="resume_score" value="{{ resume_score }}">
+
+  {% for skill in spec_skills %}
+    <input type="checkbox" name="known_skills" value="{{ skill }}">
+    {{ skill }} <br>
+  {% endfor %}
+
+  <br>
+  <button class="btn btn-success">
+    Generate Final Report
+  </button>
+</form>

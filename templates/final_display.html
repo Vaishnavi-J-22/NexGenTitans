@@ -1,0 +1,34 @@
+<h2>✅ Final Skill Readiness Report</h2>
+
+<h3>Role: {{ role }}</h3>
+<h4>Level: {{ level }}</h4>
+<h4>Final Score: {{ final_score }}%</h4>
+
+<div style="width:300px;background:#eee;">
+  <div style="width:{{ final_score }}%;background:green;color:white;">
+    {{ final_score }}%
+  </div>
+</div>
+
+<hr>
+
+<h4>✅ Known Skills</h4>
+<ul>
+{% for k in known %}
+<li>{{ k }}</li>
+{% endfor %}
+</ul>
+
+<h4>❌ Skills to Improve</h4>
+<ul>
+{% for m in missing %}
+<li>{{ m }}</li>
+{% endfor %}
+</ul>
+<hr>
+
+<div style="text-align:center; margin-top:20px;">
+  <a href="/" class="btn btn-primary">
+    ⬅ Back to Home
+  </a>
+</div>
